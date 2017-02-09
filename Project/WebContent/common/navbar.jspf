@@ -1,0 +1,63 @@
+
+<nav class="navbar navbar-default navbar-inverse">
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+				aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="home?page=1">Fabflix</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				
+<!-- 				Genres Dropdown -->
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-haspopup="true"
+					aria-expanded="false">Genres <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+					<c:forEach var="genre" items="${genres}">
+						<li><a href="browsegenre?genre=${genre}&req=genre">${genre}</a></li>
+					</c:forEach>
+					</ul>
+				</li>
+			</ul>
+			
+<!-- 			Search bar -->
+			<form class="navbar-form navbar-left" action="quicksearch" method="get">
+				<div class="form-group">
+					<input name="pattern" type="text" size=50 class="form-control"
+						placeholder="Enter Movie Title">
+				</div>
+				<button type="submit" value="Search" class="btn btn-default">Search</button>
+			</form>
+			
+<!-- 			Sign out button -->
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="advanceSearch.jsp">Advance Search</a></li>
+				<li><a href="cart">Cart</a></li>
+				<li><a href="logout">Sign out</a></li>
+			</ul>
+		</div>
+		<!-- /.navbar-collapse -->
+	</div>
+	<!-- /.container-fluid -->
+</nav>
+
+<div>
+	<ul class="center">
+		<c:forEach var="character" items="${alphabet}">
+			<li class="horizontal"><a href="browsetitle?req=title&character=${character}"> ${character} </a></li>
+		</c:forEach>
+	</ul>	
+</div>
+
+
+
